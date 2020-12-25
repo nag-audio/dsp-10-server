@@ -13,13 +13,13 @@ async def close_connections(app):
 # Инициализация приложения
 def _init_app():
     # Инициализация логгера
-    logging.basicConfig(
-        format="%(asctime)s %(levelname)s - %(message)s",
-        handlers=[
-            FileHandler("server.log", maxBytes=1024*1024)
-        ],
-        level=logging.DEBUG
-    )
+    # logging.basicConfig(
+    #     format="%(asctime)s %(levelname)s - %(message)s",
+    #     handlers=[
+    #         FileHandler("server.log", maxBytes=1024*1024)
+    #     ],
+    #     level=logging.DEBUG
+    # )
 
     app = web.Application(logger=logging.getLogger())
     app.add_routes(routes)

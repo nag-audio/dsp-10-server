@@ -38,16 +38,14 @@ async def ws_handler(request):
         # Если пришло текстовое сообщение
         if msg.type == WSMsgType.TEXT:
             # Закрытие соединения
-            if msg.data == "close":
-                request.app['websockets'].remove(current_ws)
-                await current_ws.close()
-            else:
+            # if msg.data == "close":
+            #     request.app['websockets'].remove(current_ws)
+            #     await current_ws.close()
                 # Получение и преобразование в словарь
-                data = json.loads(msg.data)
-                print(data)
-                # Выполнение команды
-                ws_command_handlers[data['type']](data['value'])
-                # Отправление команды пользователя остальным пользователям
+            data = json.loads(msg.data)
+            print(data)
+            # Выполнение команды
+            if ws_command_handlers[data['type']](data['value']): 
                 await broadcast_data(request.app, msg.data)
         # Если ошибка с подключением
         elif msg.type == WSMsgType.ERROR:

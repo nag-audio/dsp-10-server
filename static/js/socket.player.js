@@ -1,12 +1,9 @@
 let ws;
 
 window.onload = function(){
+    // Корректное отключение ws подключения при переходе на новую страницу
     ws = new WebSocket("ws://"+window.location.host+"/api/player/ws");
 
-    ws.onopen = function(event){
-        console.log("Connect success");
-        console.log(volumeCurrent);
-    };
     // Получение сообщения от сервера
     ws.onmessage = function(event){
         let data = JSON.parse(event.data); // Парсинг полученных данных
