@@ -25,8 +25,9 @@ window.onload = function(){
                 // Переключить повтор
                 update_repeat_status(data.value);
                 break;
-        //     case "update_time":
-        //         break;
+            case "songtime":
+                console.log(data);
+                break;
         //     case "update_music":
         //         break
             case "start":
@@ -91,4 +92,15 @@ function switch_shuffle(value){
         value: value
     });
     send_message(data);
+}
+
+function send_json(){
+    var pl_request = new XMLHttpRequest();
+    pl_request.onreadystatechange = function(){
+        if(pl_request.readyState == 4 && pl_request.status == 200){
+            console.log(JSON.parse(pl_request.responseText));
+        }
+    };
+    pl_request.open('GET', "http://"+window.location.host+"/api/playlists/current", true);
+    pl_request.send();
 }

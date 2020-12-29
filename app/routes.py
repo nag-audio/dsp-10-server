@@ -1,7 +1,7 @@
 from aiohttp import web
 
 from .player import handlers as player_handlers
-from .musicmanager import handlers as mm_handlers
+from .playlistsmanager import handlers as mm_handlers
 
 # Базовый маршрутизатор запросов
 routes = [
