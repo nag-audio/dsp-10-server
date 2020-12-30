@@ -38,6 +38,7 @@ async def ws_handler(request):
                 # Закрытие соединения
                 request.app['websockets'].remove(current_ws)
                 await current_ws.close()
+                break
             # Выполнение команды
             await ws_command_handlers.get(data['type'])(data['value'])
 

@@ -37,7 +37,7 @@ async def get_start_status():
 async def change_status(status):
     if status == "pause":
         await client.pause()
-    elif status in ['play', 'stop']:
+    elif status == 'play':
         await client.play()
     
 @reconnect
@@ -56,15 +56,15 @@ async def switch_volume(volume):
 
 @reconnect
 async def switch_repeat(value):
-    if value == 0:
+    if value == '0':
         # Полностью убираем повтор
         await client.repeat(0)
         await client.single(0)
-    elif value == 1:
+    elif value == '1':
         # Повтор плейлиста
         await client.repeat(1)
         await client.single(0)
-    elif value == 2:
+    elif value == '2':
         # Повтор текущего трека
         await client.repeat(1)
         await client.single(1)

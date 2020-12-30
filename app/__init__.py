@@ -29,7 +29,7 @@ async def listen_mpd_progress_song(app):
             })
             for ws in app['websockets']:
                 await ws.send_str(data)
-            await asyncio.sleep(5)
+            await asyncio.sleep(20)
  
     except asyncio.CancelledError:
         pass
