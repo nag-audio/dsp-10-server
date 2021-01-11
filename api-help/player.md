@@ -31,7 +31,7 @@ var ws = new Websocket("ws://{host}/api/ws");
 			nextsong: "Позиция следующего трека в плейлисте (пр. "15")",
 			nextsongid: "ID следующего трека в плейлисте (пр. "5")",
 		}
-		music:{
+		song:{
 			file: "Путь к файлу (пр. "/directory/file.mp3")",
 			last-modified: "Дата изменения (пр. "2020-12-05T19:48:26")",
 			artist: "Создатель (пр. "Строка")",
