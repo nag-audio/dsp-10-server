@@ -97,6 +97,10 @@ POST /playlists/save
 ------------
 
 - Переименовать плейлист
+```
+POST /playlists/rename
+```
+Запрос
 ```json
 {
 	currentname: (str, Текущее название плейлиста),
@@ -113,6 +117,10 @@ POST /playlists/save
 ------------
 
 - Переместить трек на другую позицию в плейлисте
+```
+POST /playlists/swap
+```
+Запрос
 ```json
 {
 	playlistname: (str, Название плейлиста),
