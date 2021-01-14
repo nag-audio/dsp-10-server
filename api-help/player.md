@@ -11,38 +11,39 @@ var ws = new Websocket("ws://{host}/api/ws");
 ```json
 //
 {
-		status:{
-			volume: "Текущая громкость (пр. "0-100"),
-			repeat: "Повтор плейлиста (пр. "0/1")",
-			random: "Рандомное воспроизведение (пр. "0/1")",
-			single: "Повтор трека (пр. "0/1")",
-			consume: "(пр. "0/1")",
-			playlist: "id плейлиста (пр. "2")",
-			playlistlength: "Длина плейлиста в количестве треков (пр. "15")",
-			mixrampdb: "Db (пр. "0.000000")",
-			state: "Состояние воспроизведения (пр. "stop/pause/play")",
-			song: "Позиция в плейлисте (пр. "6")",
-			songid: "ID трека (пр. "2")",
-			time: "Время воспроизведения (пр. "245:257")",
-			elapsed: "Болле точное время воспроизведения (пр. "244.33:256.728")",
-			bitrate: "Битрейт",
-			duration: "Чуть более точное время воспроизведения (пр. "256.728")",
-			audio: "bits:channel",
-			nextsong: "Позиция следующего трека в плейлисте (пр. "15")",
-			nextsongid: "ID следующего трека в плейлисте (пр. "5")",
-		}
-		song:{
-			file: "Путь к файлу (пр. "/directory/file.mp3")",
-			last-modified: "Дата изменения (пр. "2020-12-05T19:48:26")",
-			artist: "Создатель (пр. "Строка")",
-			title: "Название (пр. "Строка")",
-			album: "Альбом (пр. "Строка")",
-			date: "Дата создания (пр. "20190125")",
-			time: "Длина трека в секундах (пр. "257")",
-			duration: "Чуть более точное время воспроизведения (пр. "256.728")",
-			pos: "Позиция в плейлисте (пр. "0")",
-			id: "ID трека (пр. "1")"
-		}
+    "state": "pause/stop/play",
+    "song": 2, - позиция трека в списке воспроизведения
+    "songId": 3, - id трека в БД
+    "nextSong": 3, - Позиция следующего трека в плейлисте
+    "nextSongId": 4, - Id следующего трека в плейлисте
+    "elapsed": 5.874, - позиция в треке
+    "duration": 4713.826, - длина трека
+    "bitRate": 681,
+    "audio": "44100:16:2",
+    "sampleRate": 44100,
+    "bitDepth": 16,
+    "channels": 2,
+    "volume": -1, - громкость
+    "mixrampdb": 0,
+    "playlistVersion": 6,
+    "playlistLength": 23,
+    "repeat": true, - повтор списка воспроизведения
+    "random": false, - рандомное воспроизведение
+    "single": false, - повтор текущего трека
+    "consume": false, - удаление проигрываемого трека из списка, после окончания воспроизведения
+    "songinfo": {
+        "id": 3,
+        "position": 2,
+        "title": "Est-Ce Une Gopher Party, Baby",
+        "artist": "Alex Gopher",
+        "album": "Drums_Electronic_by_RoNikEr",
+        "track": "2",
+        "date": "2011",
+        "genre": "Drum & Bass",
+        "duration": 4713.826, - Длина трека
+        "path": "Drums & Electronic by RoNikEr/Drums_&_Electronic_by_RoNikEr.flac",
+        "lastModified": "2011-06-23T09:17:02.000Z"
+    }
 }
 ````
 
